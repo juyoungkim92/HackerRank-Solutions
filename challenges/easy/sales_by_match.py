@@ -33,6 +33,14 @@ def sales_by_match(arr):
     """
     :param arr: list of matching socks
     :return: integer of matching pair
+
+    Function explanation:
+
+    We can first count the occurrence of the individual socks in a list.
+    For this we can first get the unique items in a list and count each unique items in a list.
+    Once counted, we can do an integer division to get a number of pairs.
+    We can increment the pair we initialised in the beginning by the number we got and return the final pairs.
+
     """
     pairs = 0
 
