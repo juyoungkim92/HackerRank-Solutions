@@ -1,8 +1,9 @@
 import unittest
 from challenges.easy.sales_by_match import sales_by_match
+from challenges.easy.counting_valleys import counting_valleys
 
 
-class TestSalesByMatch(unittest.TestCase):
+class TestHackerRankSolutions(unittest.TestCase):
     """
     Test case
     """
@@ -19,3 +20,14 @@ class TestSalesByMatch(unittest.TestCase):
 
         self.assertEqual(expected_pair_1, actual_pairs_1)
         self.assertEqual(expected_pair_2, actual_pairs_2)
+
+    def test_counting_valleys(self):
+        """
+        Test that correct number of valleys were traversed
+        """
+        source_string = "UDDDUDUU"
+        expected_valley_count = 1
+
+        actual_valleys_count = counting_valleys(source_string)
+
+        self.assertEqual(expected_valley_count, actual_valleys_count)
