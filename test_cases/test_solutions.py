@@ -2,6 +2,7 @@ import unittest
 from challenges.easy.sales_by_match import sales_by_match
 from challenges.easy.counting_valleys import counting_valleys
 from challenges.easy.alphabetically_maximum_substring import maximum_substring
+from challenges.easy.alternating_characters import alternating_characters
 
 
 class TestHackerRankSolutions(unittest.TestCase):
@@ -37,14 +38,25 @@ class TestHackerRankSolutions(unittest.TestCase):
         """
         Test correct maximum substring is returned
         """
-        test_string = "bacb"
+        source_string = "bacb"
         expected_substrings = ['b', 'ba', 'bac', 'bacb', 'a', 'ac', 'acb', 'c', 'cb', 'b']
         expected_max_substring = "cb"
 
-        max_substr, substr_array = maximum_substring(test_string)
+        max_substr, substr_array = maximum_substring(source_string)
 
         self.assertEqual(expected_max_substring, max_substr)
         self.assertListEqual(expected_substrings, substr_array)
+
+    def test_alternating_characters(self):
+        """
+        Test correct maximum substring is returned
+        """
+        source_string = "AAABBB"
+        expected_deletion_count = 4
+
+        actual_count = alternating_characters(source_string)
+
+        self.assertEqual(expected_deletion_count, actual_count)
 
 
 if __name__ == '__main__':
