@@ -5,7 +5,7 @@ from challenges.easy.alphabetically_maximum_substring import maximum_substring
 from challenges.easy.alternating_characters import alternating_characters
 
 
-class TestHackerRankSolutions(unittest.TestCase):
+class TestEasySolutions(unittest.TestCase):
     """
     Test case
     """
