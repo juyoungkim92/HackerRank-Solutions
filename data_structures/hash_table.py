@@ -3,6 +3,10 @@ Python implementation of Hash tables.
 
 Dictionary is Python specific implementation of hash table.
 
+# Hash function - converts the input (key) into an index to an array.
+One way of hash function. Convert they key into ASCII and get a sum
+and do a modulus with the size of array. For example 'march 6' -> 609 % 10 -> 9 (index)
+
 """
 
 
