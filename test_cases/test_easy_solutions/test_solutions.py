@@ -3,6 +3,7 @@ from challenges.easy.sales_by_match import sales_by_match
 from challenges.easy.counting_valleys import counting_valleys
 from challenges.easy.alphabetically_maximum_substring import maximum_substring
 from challenges.easy.alternating_characters import alternating_characters
+from challenges.easy.arrays_left_rotation import array_rotation_left_method_1, array_rotation_left_method_2
 
 
 class TestEasySolutions(unittest.TestCase):
@@ -57,6 +58,30 @@ class TestEasySolutions(unittest.TestCase):
         actual_count = alternating_characters(source_string)
 
         self.assertEqual(expected_deletion_count, actual_count)
+
+    def test_left_rotation_method_1(self):
+        """
+        Test correct array is returned after rotation using time complexity of O(n) with no constraints
+        """
+        source_array = [1, 2, 3, 4, 5]
+        rotation_count = 6
+        expected_array = [2, 3, 4, 5, 1]
+
+        actual_array = array_rotation_left_method_1(source_array, rotation_count)
+
+        self.assertEqual(expected_array, actual_array)
+
+    def test_left_rotation_method_2(self):
+        """
+        Test correct array is returned after rotation using time complexity of O(1) with constraints
+        """
+        source_array = [1, 2, 3, 4, 5]
+        rotation_count = 4
+        expected_array = [5, 1, 2, 3, 4]
+
+        actual_array = array_rotation_left_method_2(source_array, rotation_count)
+
+        self.assertEqual(expected_array, actual_array)
 
 
 if __name__ == '__main__':
