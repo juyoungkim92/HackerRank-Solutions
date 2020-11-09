@@ -34,12 +34,12 @@ class TreeNode:
 
     def print_tree(self):
         spaces = ' ' * self.get_level() * 3
-        prefix = spaces + '|__' if self.parent else ""
+        prefix = spaces + '|__' if self.parent else ""  # if no parent no prefix needed
         print(prefix + self.data)
         # go through each tree and print the children
         if self.children:
             for child in self.children:
-                child.print_tree()
+                child.print_tree()  # use recursion
 
 
 def build_product_tree():
