@@ -4,6 +4,7 @@ from challenges.easy.counting_valleys import counting_valleys
 from challenges.easy.alphabetically_maximum_substring import maximum_substring
 from challenges.easy.alternating_characters import alternating_characters
 from challenges.easy.arrays_left_rotation import array_rotation_left_method_1, array_rotation_left_method_2
+from challenges.easy.making_anagram import make_anagram
 
 
 class TestEasySolutions(unittest.TestCase):
@@ -82,6 +83,23 @@ class TestEasySolutions(unittest.TestCase):
         actual_array = array_rotation_left_method_2(source_array, rotation_count)
 
         self.assertEqual(expected_array, actual_array)
+
+    def test_make_anagram(self):
+        """
+        Test correct minimum number of deletions is returned from anagram function
+        """
+        source_string_a = "aabyye"
+        source_string_b = "bda"
+        expected_number_of_deletions_1 = 5
+        actual_min_del_1 = make_anagram(source_string_a, source_string_b)
+
+        source_string_c = "fcrxzwscanmligyxyvym"
+        source_string_d = "jxwtrhvujlmrpdoqbisbwhmgpmeoke"
+        expected_number_of_deletions_2 = 30
+        actual_min_del_2 = make_anagram(source_string_c, source_string_d)
+
+        self.assertEqual(expected_number_of_deletions_1, actual_min_del_1)
+        self.assertEqual(expected_number_of_deletions_2, actual_min_del_2)
 
 
 if __name__ == '__main__':
