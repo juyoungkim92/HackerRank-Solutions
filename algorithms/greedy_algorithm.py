@@ -41,6 +41,39 @@ def greedy_algorithm(n):
     return result
 
 
+def task_assignment(n):
+    """
+    Takes in a list of values (correspond to number of hours required to complete a task)
+    Using greedy algorithm, print pairs that results in minimum completion of tasks
+
+    Example:
+
+        A = [6, 3, 2, 7, 5, 5]
+        if we sort [2, 3, 5, 5, 6, 7]
+        if we pair smallest and largest, we get:
+        [2, 7], [3, 6], [5, 5]
+        so require 10 hours to complete all tasks
+
+    * Useful information below
+
+    n is always even number
+    In Python ~ operator is a bitwise complement operator
+    You invert the two's complement (bits) of a number and add 1
+
+    2 - 0000 0010
+
+    minus 3:
+    3 - 0000 0011 -> flip 1111 1100 -> add 1 -> 1111 1101 -> -3 in bits
+
+    if you invert 2:
+    1111 1101 -> which is -3
+
+    """
+    sorted_n = sorted(n)
+    for i in range(len(sorted_n)//2):
+        print(sorted_n[i], sorted_n[~i])
+
+
 class TestGreedyAlgorithm(unittest.TestCase):
     def test_greedy_algorithm(self):
         change = 1260
@@ -55,3 +88,5 @@ if __name__ == '__main__':
 
 
 # more examples to follow...
+
+
